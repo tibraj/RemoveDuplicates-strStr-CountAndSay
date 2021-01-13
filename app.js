@@ -25,3 +25,10 @@ function strStr(haystack, needle) {
 
 
 //Count and Say
+function countAndSay(n) {
+    if(n === 1) return '1';
+    const digitsArray = countAndSay(n - 1).match(/(\d)\1*/g);
+    return digitsArray.map(
+        digitString => digitString.length + digitString[0] 
+    ).join('');
+}
